@@ -1,4 +1,4 @@
-import { ArrowRight, Book, BookMarked, CircleCheck, Clock, CodeXml, Shell, Zap } from 'lucide-react'
+import { ArrowRight, Book, CircleCheck, Clock, CodeXml, Shell, Zap } from 'lucide-react'
 
 function Home() {
 
@@ -15,8 +15,8 @@ function Home() {
   ]
 
   return (
-    <div className="flex justify-between items-center gap-10 py-30 px-30">
-      <div>
+    <div className="flex flex-col lg:flex-row justify-between items-center gap-10 py-10 px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      <div className='w-full lg:w-3/5'>
         <div>
           <h1 className="border-2 px-5 py-2 rounded-2xl text-[#a361ee] font-bold flex w-fit">
             <Zap />
@@ -24,23 +24,23 @@ function Home() {
           </h1>
         </div>
         <div className='my-3'>
-          <h1 className='text-white text-8xl font-bold'>
+          <h1 className='text-white text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'>
             Sharpen Your
           </h1>
-          <h1 className='bg-linear-to-r from-[#a361ee] to-[#d00cea] bg-clip-text text-transparent text-8xl font-bold'>
+          <h1 className='bg-linear-to-r from-[#a361ee] to-[#d00cea] bg-clip-text text-transparent text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl'>
             Developer Skills
           </h1>
         </div>
         <div>
-          <h1 className='text-gray-500 text-2xl font-bold mx-2'>
-            Quick, focused quizzes to help you prepare for your next MERN <br />
-            interview. Learn, practice and build confidence one question at a <br />
+          <h1 className="text-gray-500 text-base sm:text-lg md:text-xl font-bold mx-2 leading-relaxed">
+            Quick, focused quizzes to help you prepare for your next MERN
+            interview. Learn, practice and build confidence one question at a
             time.
           </h1>
         </div>
-        <div className='flex justify-center pt-10'>
-          {details.map((items) => (
-            <div className='text-white m-2 border-2 border-[#352443] bg-[#352443] w-fit p-5 rounded-2xl'>
+        <div className='flex flex-wrap sm:flex-row justify-center pt-10'>
+          {details.map((items, index) => (
+            <div key={index} className='text-white border-2 border-[#352443] bg-[#352443] w-full sm:flex-1 sm:min-w-40 p-4 m-2 rounded-2xl'>
               {items.logo}
               <h1 className='font-bold '>
                 {items.heading}
@@ -58,14 +58,14 @@ function Home() {
           </button>
         </div>
       </div>
-      <div className=''>
+      <div className='py-5 sm:py-9 lg:py-13 w-full lg:w-2/5'>
         <div className='border-2 border-[#b30fa8] rounded-2xl p-5 text-white'>
-          <div className='flex gap-50 justify-between items-center'>
+          <div className='flex justify-between items-center'>
             <div>
-              <h1 className='text-gray-500'>
+              <h1 className='text-gray-500 text-sm sm:text-base md:text-lg'>
                 YOUR NEXT CHALLENGE
               </h1>
-              <h1 className='text-white font-bold text-3xl'>
+              <h1 className='text-white font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl'>
                 MERN Developer
               </h1>
             </div>
@@ -75,14 +75,14 @@ function Home() {
           </div>
           <div>
             <div className='border-2 rounded-2xl border-[#352443] bg-[#352443] p-2 m-3'>
-              <div className='flex justify-between'>
-              <h1 className='text-gray-500'>
-                Quiz Overview
-              </h1>
-              <h1 className='text-[#a361ee]'>
-                Beginner
-              </h1>
-            </div>
+              <div className='flex flex-col sm:flex-row justify-between'>
+                <h1 className='text-gray-500'>
+                  Quiz Overview
+                </h1>
+                <h1 className='text-[#a361ee]'>
+                  Beginner
+                </h1>
+              </div>
               {poster.map((items, index) => (
                 <div key={index} className='p-2 flex gap-3 items-center'>
                   {items.logo}
